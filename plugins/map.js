@@ -5,10 +5,12 @@ function initMap() {
     const map = new google.maps.Map(
         document.getElementById("map"), { zoom: 13, center: uluru });
     // The marker, positioned at Uluru
+
+    const icon = "../images/map/marker.png"
     const marker = new google.maps.Marker({
         position: uluru,
         map: map,
-        icon: "../images/map/marker.png"
+        icon: icon,
     });
 
 }
