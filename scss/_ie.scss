@@ -1,0 +1,20 @@
+.ie11,
+.ie10,
+.ie9,
+.ie8 {
+
+    .header {
+        width: auto;
+    }
+    .page--bg-touch {
+        left: 0;
+        transform: translate(0, 0);
+        top: auto;
+        bottom: 150px;
+
+        @media screen and (max-width: 479px) {
+            left: -15px;
+            max-width: calc(100% + 30px);
+        }
+    }
+}

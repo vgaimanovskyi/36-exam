@@ -1,0 +1,833 @@
+@import '_reset';
+
+$colorText: #fff;
+$colorTextDark: #2c4058;
+$colorBrend: #55b7ff;
+$colorBrendDark: #7e5aff;
+
+@import '_slick';
+@import '_slick-theme';
+
+// font-family: 'Open Sans', sans-serif;
+.page {
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &__caption {
+        font-family: 'gothambold1';
+        font-size: 44px;
+        color: $colorTextDark;
+        padding: 0;
+        text-align: center;
+        text-transform: uppercase;
+        position: relative;
+        margin: 0 0 89px 0;
+
+        @media screen and (max-width: 991px) {
+            margin: 0 0 50px 0;
+        }
+        @media screen and (max-width: 575px) {
+            font-size: 38px;
+        }
+        @media screen and (max-width: 479px) {
+            font-size: 34px;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: -31px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 1px;
+            background-color: $colorTextDark;
+        }
+        &--color { color: $colorText;
+            &::before { background-color: $colorText; }
+        }
+    }
+}
+.mainer {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+.btn {
+    font-family: 'GothamBook';
+    font-size: 14px;
+    color: $colorTextDark;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+    width: 190px;
+    line-height: 48px;
+    background-color: transparent;
+    border: 1px solid $colorTextDark;
+    box-sizing: border-box;
+    transition-duration: 0.3s;
+    margin: 0 0 55px 0;
+
+    @media screen and (max-width: 991px) {
+        margin: 0 0 30px 0;
+    }
+    @media screen and (max-width: 767px) {
+        margin: 0 auto 55px auto;
+    }
+    &:focus,
+    &:hover {
+        box-shadow: 0 0 7px $colorTextDark inset;
+    }
+    &:active {
+        box-shadow: 0 0 3px $colorTextDark inset;
+    }
+}
+/* nav */
+.page {
+
+    &--pos-nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+    }
+}
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 53px 0 0 0;
+
+    @media screen and (max-width: 1199px) {
+        padding: 30px 0 0 0;
+    }
+    &__menu {
+        flex-grow: 1;
+        display: block;
+
+        @media screen and (max-width: 969px) {
+            display: none;
+            width: 100%;
+        }
+    }
+    &__social {
+        max-width: 200px;
+        width: 100%;
+        display: block;
+
+        @media screen and (max-width: 969px) {
+            display: none;
+        }
+    }
+}
+.logo {
+    max-width: 270px;
+    width: 100%;
+    
+    &__svg {
+        fill: $colorText;
+        transition: 0.8s;
+
+        &--fill { fill: $colorTextDark; }
+    }
+}
+.menu {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    
+    @media screen and (max-width: 969px) {
+        width: 100%;
+        flex-direction: column;
+    }
+    &__item {
+        margin:  0 auto;
+    
+        @media screen and (max-width: 969px) {
+            margin: 25px 0;
+            text-align: center;
+        }
+    }
+    &__link {
+        font-family: 'GothamBook';
+        font-size: 14px;
+        color: $colorText;
+        text-transform: uppercase;
+        text-decoration: none;
+        position: relative;
+        
+        @media screen and (max-width: 969px) {
+            font-family: 'gothambold1';
+            font-size: 16px;
+            color: $colorTextDark;
+
+            &::before {
+                display: none;
+            }
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: -14px;
+            transform: translate(-100%, -50%);
+            border: 1px solid $colorText;
+            width: 9px;
+            height: 9px;
+            box-sizing: border-box;
+            border-radius: 50%;
+            transition-duration: 0.3s;
+        }
+        &:focus::before,
+        &:hover::before {
+            background-color: $colorText;
+        }
+    }
+}
+.social {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    
+    &--align { margin: 0 0 0 auto; }
+    @media screen and (max-width: 479px) {
+        &--align-center { margin: 15px auto 0 auto; }
+    }
+    &__item { margin: 0 0 0 21px; }
+    &__link {
+        font-size: 16px;
+        line-height: 40px;
+        color: $colorText;
+        text-decoration: none;
+        display: block;
+        border: 1px solid transparentize($colorText, 0.5);
+        height: 40px;
+        width: 40px;
+        box-sizing: border-box;
+        border-radius: 50%;
+        text-align: center;
+        transition-duration: 0.3s;
+
+        &:focus,
+        &:hover {
+            font-size: 18px;
+            box-shadow: 0 0 10px $colorText;
+        }
+    }
+}
+.hamburger {
+    width: 42px;
+    height: 42px;
+    margin: 0 0 0 auto;
+    display: none;
+    position: absolute;
+    top: 35px;
+    right: 15px;
+
+    @media screen and (max-width: 969px) {
+        display: block;
+    }
+    &__line {
+        display: block;
+        width: 100%;
+        height: 4px;
+        background-color: $colorText;
+        border-radius: 2px;
+        position: absolute;
+        left: 0;
+        transition: 0.5s ease;
+        
+        &:first-child {top: 6px;}
+        &:nth-child(2) {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        &:last-child {bottom: 6px;}
+        &--open {
+            background-color: $colorTextDark;
+            transform-origin: center;
+            left: 25%;
+            
+            &:first-child {transform: rotate(405deg) translateY(18px);}
+            &:nth-child(2) {
+                left: -300%;
+                opacity: 0;
+            }
+            &:last-child {transform: rotate(-405deg) translateY(-18px);}
+        }
+    }
+}
+/* header */
+.page {
+
+    &--pos-header {
+        position: relative;
+        transition: 0.7s;
+    }
+    &--open-header {
+        margin-top: 380px;
+    }
+}
+.header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    max-width: 1200px;
+    width: 100%;
+
+    &__heading {
+        font-family: 'gothambold1';
+        font-size: 80px;
+        color: $colorText;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 0;
+        margin: 0 0 19px 0;
+
+        @media screen and (max-width: 1199px) {
+            font-size: 60px;
+        }
+        @media screen and (max-width: 991px) {
+            font-size: 44px;
+        }
+        @media screen and (max-width: 575px) {
+            font-size: 34px;
+        }
+    }
+    &__slogan {
+        font-family: 'GothamBook';
+        font-size: 18px;
+        color: $colorText;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+
+        @media screen and (max-width: 1199px) {
+            font-size: 16px;
+        }
+        @media screen and (max-width: 991px) {
+            font-size: 14px;
+        }
+        @media screen and (max-width: 575px) {
+            font-size: 12px;
+        }
+        @media screen and (max-width: 575px) {
+            display: none;
+        }
+    }
+    &__slide {
+        width: 100%;
+        min-height: 400px;
+    }
+}
+.header-carousel {
+    width: 100%;
+
+    @import "_header-carousel";
+}
+.scroll {
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    transform: translateX(-50%) rotate(-90deg);
+    font-size: 20px;
+    line-height: 36px;
+    color: $colorText;
+    text-decoration: none;
+    display: block;
+    border: 1px solid transparentize($colorText, 0.5);
+    height: 40px;
+    width: 40px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    text-align: center;
+    transition-duration: 0.3s;
+    cursor: pointer;
+
+    @media screen and (max-width: 1199px) {
+        bottom: 25px;
+    }
+    &:focus,
+    &:hover {
+        border-color: $colorText;
+    }
+}
+/* wedo */
+.page {
+
+    &--bg-wedo {
+        padding: 129px 0 140px 0;
+        overflow: hidden;
+
+        @media screen and (max-width: 991px) {
+            padding: 100px 0;
+        }
+        @media screen and (max-width: 575px) {
+            padding: 60px 0;
+        }
+    }
+}
+.wedo {
+    padding: 70px 0 0 0;
+
+    @media screen and (max-width: 991px) {
+        padding: 0;
+    }
+    &__block {
+        position: relative;
+        font-size: 0;
+        margin-bottom: 210px;
+        width: 100%;
+
+        @media screen and (max-width: 991px) {
+            margin-bottom: 150px;
+        }
+        @media screen and (max-width: 767px) {
+            margin-bottom: 50px;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: -70px;
+            right: 300px;
+            width: 100%;
+            height: 100%;
+            background-color: $colorBrend;
+            z-index: -1;
+
+            @media screen and (max-width: 1365px) { right: 200px; }
+            @media screen and (max-width: 1365px) { right: 100px; }
+            @media screen and (max-width: 991px) {
+                transform: translateY(20%);
+            }
+            @media screen and (max-width: 767px) {
+                transform: translateY(0);
+            }
+        }
+        &--align {
+            text-align: right;
+            margin: 0;
+
+            @media screen and (max-width: 767px) {
+                margin: 100px 0 50px 0;
+            }
+            &::before {
+                background-color: $colorBrendDark;
+                left: 300px;
+                right: auto;
+                width: 100%;
+
+                @media screen and (max-width: 1365px) { left: 200px; }
+                @media screen and (max-width: 1365px) { left: 100px; }
+            }
+        }
+    }
+    &__photo {
+        display: block;
+        width: 100%;
+
+        @media screen and (max-width: 991px) {
+            transform: translateY(20%);
+        }
+        @media screen and (max-width: 767px) {
+            transform: translateY(0);
+            margin-top: 50px;
+        }
+    }
+    &__caption {
+        font-family: 'gothambold1';
+        font-size: 44px;
+        color: $colorTextDark;
+        text-transform: uppercase;
+        padding: 0;
+        margin: 54px 0 21px 0;
+
+        @media screen and (max-width: 991px) {
+            margin-top: 30px;
+            font-size: 38px;
+        }
+        @media screen and (max-width: 767px) {
+            margin: 0 0 21px 0;
+            text-align: center;
+        }
+        @media screen and (max-width: 575px) {
+            font-size: 32px;
+        }
+        @media screen and (max-width: 575px) {
+            font-size: 26px;
+        }
+    }
+    &__uppertext {
+        font-family: 'GothamBook';
+        font-size: 22px;
+        display: block;
+        margin: 0 0 2px 0;
+
+        @media screen and (max-width: 991px) {
+            font-size: 20px;
+        }
+        @media screen and (max-width: 479px) {
+            font-size: 18px;
+        }
+    }
+    &__description {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 18px;
+        line-height: 30px;
+        color: $colorTextDark;
+        margin: 0 0 32px 0;
+
+        @media screen and (max-width: 767px) {
+            text-align: center;
+        }
+        @media screen and (max-width: 575px) {
+            font-size: 16px;
+        }
+        @media screen and (max-width: 479px) {
+            font-size: 14px;
+        }
+    }
+    &__location {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 18px;
+        font-style: italic;
+        color: $colorTextDark;
+
+        @media screen and (max-width: 575px) {
+            font-size: 16px;
+        }
+        @media screen and (max-width: 479px) {
+            font-size: 14px;
+        }
+    }
+}
+/* news */
+.page {
+
+    &--bg-news {
+        background-image: url(../images/bg-news.jpg);
+        padding: 201px 0 179px 0;
+
+        @media screen and (max-width: 991px) {
+            padding: 100px 0;
+        }
+        @media screen and (max-width: 575px) {
+            padding: 60px 0;
+        }
+    }
+}
+.news-carousel {
+    margin: 0 -15px 0 -15px;
+    width: 100%;
+
+    @media screen and (max-width: 1365px) {
+        margin: 0 auto;
+        max-width: 1024px;
+    }
+    @media screen and (max-width: 1199px) {
+        margin: 0 auto;
+        max-width: 798px;
+    }
+    @media screen and (max-width: 575px) {
+        max-width: 400px;   
+    }
+}
+.news {
+    background-color: $colorText;
+    max-width: 370px;
+    height: 514px;
+    margin: 0 15px;
+    cursor: pointer;
+
+    &__block-photo {
+        width: 100%;
+        height: 240px;
+        overflow: hidden;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+    &__photo { display: block; }
+    &__text { padding: 20px; }
+    &__caption {
+        font-family: 'gothambold1';
+        font-size: 22px;
+        line-height: 34px;
+        color: $colorTextDark;
+        text-transform: uppercase;
+        height: 68px;
+        overflow: hidden;
+        margin: 0 0 3px 0;
+
+        @media screen and (max-width: 1365px) {
+            font-size: 20px;
+        }
+        @media screen and (max-width: 479px) {
+            font-size: 16px;
+            line-height: 28px;
+        }
+    }
+    &__description {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 18px;
+        color: $colorTextDark;
+        line-height: 30px;
+        height: 60px;
+        overflow: hidden;
+        margin: 0 0 31px 0;
+
+        @media screen and (max-width: 1365px) {
+            font-size: 16px;
+        }
+        @media screen and (max-width: 575px) {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+    &__avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        overflow: hidden;
+        float: left;
+        margin: 0 20px 0 0;
+    }
+    &__name {
+        font-family: 'GothamBook';
+        font-size: 18px;
+        color: $colorTextDark;
+        text-transform: uppercase;
+        padding-top: 8px;
+        margin: 0 0 8px 0;
+
+        @media screen and (max-width: 1365px) {
+            font-size: 16px;
+        }
+    }
+    &__date {
+        font-family: 'GothamBook';
+        font-size: 14px;
+        color: $colorBrend;
+    }
+}
+/* gallery */
+.page {
+
+    &--bg-gallery {
+        padding: 201px 0 140px 0;
+
+        @media screen and (max-width: 991px) {
+            padding: 100px 0;
+        }
+    }
+}
+.gallery {
+
+    &__row {margin: 0 -5px; }
+    &__col {
+        padding: 0 5px;
+        margin: 0 0 10px 0;
+        position: relative;
+        cursor: pointer;
+
+        &::before {
+            content: url(../images/gallery/360.png);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition-duration: 0.3s;
+        }
+        &:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+    &__img {
+        display: block;
+        width: 100%;
+    }
+    &__btn { margin: 40px auto 0 auto; }
+}
+/* map */
+.map {
+    display: block;
+    width: 100%;
+    height: 700px;
+
+    @media screen and (max-width: 991px) {
+        height: 600px;
+    }
+}
+/* touch */
+.page {
+
+    &--bg-touch {
+        background-image: url(../images/bg-touch.jpg);
+        padding: 90px 0 80px 0;
+        position: absolute;
+        top: -204px;
+        left: 50%;
+        transform: translate(-50%, -70%);
+        width: 100%;
+
+        @media screen and (max-width: 991px) {
+            top: -150px;
+        }
+        @media screen and (max-width: 767px) {
+            top: -140px;
+            padding: 50px 0;
+        }
+        @media screen and (max-width: 479px) {
+            position: relative;
+            transform: translate(0, 0);
+            top: 0;
+            left: -15px;
+            margin: 0 0 50px 0;
+            width: calc(100% + 30px);
+        }
+    }
+}
+.touch {
+    display: flex;
+    padding: 0 60px;
+    margin: -44px 0 0 0;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: 991px) {
+        padding: 0 40px;
+    }
+    @media screen and (max-width: 767px) {
+        margin: -20px 0 0 0;
+    }
+    @media screen and (max-width: 575px) {
+        padding: 0 20px;
+    }
+    &__contacts {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        width: 50%;
+
+        @media screen and (max-width: 479px) {
+            width: 100%;
+        }
+    }
+    &__contacts-items {
+        font-family: 'GothamBook';
+        font-size: 18px;
+        color: $colorTextDark;
+        margin: 0 0 43px 0;
+
+        @media screen and (max-width: 767px) {
+            font-size: 14px;
+        }
+        @media screen and (max-width: 575px) {
+            font-size: 12px;
+        }
+        @media screen and (min-width: 480px) {
+            &:last-child{ margin: 0; }
+        }
+    }
+    &__icon {  color: $colorBrendDark; }
+}
+.form {
+    width: 50%;
+
+    @media screen and (max-width: 479px) {
+        width: 100%;
+    }
+    &__btn {
+        width: 140px;
+        padding: 0;
+        margin: 0 0 0 auto;
+
+        @media screen and (max-width: 479px) {
+            margin: 0 auto;
+        }
+    }
+}
+input[type=text],
+input[type=email] {
+    width: 100%;
+    padding: 0 0 20px 0;
+    margin: 0 0 37px 0;
+    font-family: 'GothamBook';
+    font-size: 18px;
+    color: $colorTextDark;
+    border: none;
+    border-bottom: 1px solid transparentize($colorTextDark, 0.7);
+    
+    @media screen and (max-width: 575px) {
+        font-size: 14px;
+    }
+    &:focus,
+    &:hover {
+        border-color: $colorTextDark;
+    }
+    &::placeholder {
+        color: transparentize($colorTextDark, 0.7);
+    }
+    &::-moz-placeholder {
+        color: transparentize($colorTextDark, 0.7);
+    }
+    &:-ms-input-placeholder {
+        color: transparentize($colorTextDark, 0.7);
+    }
+    &::-webkit-input-placeholder {
+        color: transparentize($colorTextDark, 0.7);
+    }
+}
+/* footer */
+.page {
+
+    &--bg-footer {
+        background-image: url(../images/bg-footer.jpg);
+        padding: 204px 0 210px 0;
+
+        @media screen and (max-width: 991px) {
+            padding: 204px 0 100px 0;
+        }
+        @media screen and (max-width: 479px) {
+            padding: 0 0 100px 0;
+        }
+    }
+}
+.footer {
+    max-width: 770px;
+    margin: 0 auto;
+    position: relative;
+    
+    &__block {
+        display: flex;
+        margin: 0 0 40px 0;
+
+        @media screen and (max-width: 479px) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    &__text {
+        font-family: 'GothamBook';
+        font-size: 14px;
+        color: $colorText;
+
+        @media screen and (max-width: 767px) {
+            text-align: center;
+        }
+    }
+}
+.pre {
+    display: inline-block;
+    margin: 0 20px;
+
+    @media screen and (max-width: 575px) {
+        display: block;
+        color: transparent;
+    }
+}
+@import '_ie';
