@@ -1400,8 +1400,8 @@ h1, h2 {
   }
 }
 
-input[type=text],
-input[type=email] {
+input[type="text"],
+input[type="email"] {
   width: 100%;
   padding: 0 0 20px 0;
   margin: 0 0 37px 0;
@@ -1413,50 +1413,50 @@ input[type=email] {
 }
 
 @media screen and (max-width: 575px) {
-  input[type=text],
-  input[type=email] {
+  input[type="text"],
+  input[type="email"] {
     font-size: 14px;
   }
 }
 
-input[type=text]:focus, input[type=text]:hover,
-input[type=email]:focus,
-input[type=email]:hover {
+input[type="text"]:focus, input[type="text"]:hover,
+input[type="email"]:focus,
+input[type="email"]:hover {
   border-color: #2c4058;
 }
 
-input[type=text]::-webkit-input-placeholder,
-input[type=email]::-webkit-input-placeholder {
+input[type="text"]::-webkit-input-placeholder,
+input[type="email"]::-webkit-input-placeholder {
   color: rgba(44, 64, 88, 0.3);
 }
 
-input[type=text]:-ms-input-placeholder,
-input[type=email]:-ms-input-placeholder {
+input[type="text"]:-ms-input-placeholder,
+input[type="email"]:-ms-input-placeholder {
   color: rgba(44, 64, 88, 0.3);
 }
 
-input[type=text]::-ms-input-placeholder,
-input[type=email]::-ms-input-placeholder {
+input[type="text"]::-ms-input-placeholder,
+input[type="email"]::-ms-input-placeholder {
   color: rgba(44, 64, 88, 0.3);
 }
 
-input[type=text]::placeholder,
-input[type=email]::placeholder {
+input[type="text"]::placeholder,
+input[type="email"]::placeholder {
   color: rgba(44, 64, 88, 0.3);
 }
 
-input[type=text]::-moz-placeholder,
-input[type=email]::-moz-placeholder {
+input[type="text"]::-moz-placeholder,
+input[type="email"]::-moz-placeholder {
   color: rgba(44, 64, 88, 0.3);
 }
 
-input[type=text]:-ms-input-placeholder,
-input[type=email]:-ms-input-placeholder {
+input[type="text"]:-ms-input-placeholder,
+input[type="email"]:-ms-input-placeholder {
   color: rgba(44, 64, 88, 0.3);
 }
 
-input[type=text]::-webkit-input-placeholder,
-input[type=email]::-webkit-input-placeholder {
+input[type="text"]::-webkit-input-placeholder,
+input[type="email"]::-webkit-input-placeholder {
   color: rgba(44, 64, 88, 0.3);
 }
 
