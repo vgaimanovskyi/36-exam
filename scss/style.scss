@@ -213,7 +213,7 @@ $colorBrendDark: #7e5aff;
 
         &:focus,
         &:hover {
-            font-size: 18px;
+            text-shadow: 0 0 10px $colorText;
             box-shadow: 0 0 10px $colorText;
         }
     }
@@ -829,5 +829,8 @@ input[type="email"] {
         display: block;
         color: transparent;
     }
+}
+.animate__animated.animate__backInDown {
+    animation-delay: 1s;
 }
 @import '_ie';

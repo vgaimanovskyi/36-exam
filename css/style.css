@@ -11,6 +11,7 @@ body, form, div, p, a, img, h1, h2, h3, h4, h5, h6, table, table tr, table td {
   color: #fff;
   font-family: Arial;
   font-size: 12px;
+  line-height: 1;
   font-style: normal;
   font-weight: normal;
   margin: 0;
@@ -616,7 +617,7 @@ h1, h2 {
 }
 
 .social__link:focus, .social__link:hover {
-  font-size: 18px;
+  text-shadow: 0 0 10px #fff;
   -webkit-box-shadow: 0 0 10px #fff;
           box-shadow: 0 0 10px #fff;
 }
@@ -1525,6 +1526,11 @@ input[type="email"]::-webkit-input-placeholder {
     display: block;
     color: transparent;
   }
+}
+
+.animate__animated.animate__backInDown {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
 }
 
 .ie11 .header,

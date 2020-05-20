@@ -7,6 +7,7 @@
     <meta name="description" content="Monticello - We make the world's beautiful every day">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
@@ -69,7 +70,7 @@
     <!-- header -->
     <div class="page page--pos-header" id="header">
         <header class="header">
-            <h1 class="header__heading">Simple & mordern</h1>
+            <h1 class="header__heading animate__animated animate__backInDown">Simple & mordern</h1>
             <p class="header__slogan">We make the world's beautiful every day</p>
         </header>
         <div class="header-carousel">
@@ -232,7 +233,7 @@
         </div>
     </div>
     <!-- gallery -->
-    <div class="page page--bg-gallery">
+    <div class="page page--bg-gallery" id="gallery">
         <div class="mainer">
             <h2 class="page__caption">gallery</h2>
             <div class="gallery">
@@ -340,6 +341,7 @@
     <script src="plugins/carousel.js"></script>
     <script src="plugins/scroll.js"></script>
     <script src="plugins/map.js"></script>
+    <script src="plugins/ie.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?&callback=initMap"></script>
 </body>
 
